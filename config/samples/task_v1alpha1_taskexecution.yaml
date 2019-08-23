@@ -1,0 +1,7 @@
+apiVersion: task.projectriff.io/v1alpha1
+kind: TaskExecution
+metadata:
+  name: taskexecution-sample
+spec:
+  # Add fields here
+  foo: bar

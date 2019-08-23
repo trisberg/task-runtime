@@ -9,6 +9,26 @@ rules:
 - apiGroups:
   - task.projectriff.io
   resources:
+  - taskexecutions
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - task.projectriff.io
+  resources:
+  - taskexecutions/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - task.projectriff.io
+  resources:
   - tasks
   verbs:
   - create
