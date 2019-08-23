@@ -4,7 +4,7 @@ repo: github.com/projectriff/task
 resources:
 - group: task
   version: v1alpha1
-  kind: Task
+  kind: TaskLauncher
 - group: task
   version: v1alpha1
   kind: TaskExecution

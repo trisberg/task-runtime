@@ -29,7 +29,7 @@ rules:
 - apiGroups:
   - task.projectriff.io
   resources:
-  - tasks
+  - tasklaunchers
   verbs:
   - create
   - delete
@@ -41,7 +41,7 @@ rules:
 - apiGroups:
   - task.projectriff.io
   resources:
-  - tasks/status
+  - tasklaunchers/status
   verbs:
   - get
   - patch

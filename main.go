@@ -61,11 +61,11 @@ func main() {
 		os.Exit(1)
 	}
 
-	if err = (&controllers.TaskReconciler{
+	if err = (&controllers.TaskLauncherReconciler{
 		Client: mgr.GetClient(),
-		Log:    ctrl.Log.WithName("controllers").WithName("Task"),
+		Log:    ctrl.Log.WithName("controllers").WithName("TaskLauncher"),
 	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "Task")
+		setupLog.Error(err, "unable to create controller", "controller", "TaskLauncher")
 		os.Exit(1)
 	}
 	if err = (&controllers.TaskExecutionReconciler{

@@ -4,16 +4,16 @@ apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
   creationTimestamp: null
-  name: tasks.task.projectriff.io
+  name: tasklaunchers.task.projectriff.io
 spec:
   group: task.projectriff.io
   names:
-    kind: Task
-    plural: tasks
+    kind: TaskLauncher
+    plural: tasklaunchers
   scope: ""
   validation:
     openAPIV3Schema:
-      description: Task is the Schema for the tasks API
+      description: TaskLauncher is the Schema for the tasklaunchers API
       properties:
         apiVersion:
           description: 'APIVersion defines the versioned schema of this representation
@@ -28,10 +28,10 @@ spec:
         metadata:
           type: object
         spec:
-          description: TaskSpec defines the desired state of Task
+          description: TaskLauncherSpec defines the desired state of TaskLauncher
           type: object
         status:
-          description: TaskStatus defines the observed state of Task
+          description: TaskLauncherStatus defines the observed state of TaskLauncher
           type: object
       type: object
   version: v1alpha1

@@ -22,38 +22,38 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// TaskSpec defines the desired state of Task
-type TaskSpec struct {
+// TaskLauncherSpec defines the desired state of TaskLauncher
+type TaskLauncherSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 }
 
-// TaskStatus defines the observed state of Task
-type TaskStatus struct {
+// TaskLauncherStatus defines the observed state of TaskLauncher
+type TaskLauncherStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 }
 
 // +kubebuilder:object:root=true
 
-// Task is the Schema for the tasks API
-type Task struct {
+// TaskLauncher is the Schema for the tasklaunchers API
+type TaskLauncher struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   TaskSpec   `json:"spec,omitempty"`
-	Status TaskStatus `json:"status,omitempty"`
+	Spec   TaskLauncherSpec   `json:"spec,omitempty"`
+	Status TaskLauncherStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// TaskList contains a list of Task
-type TaskList struct {
+// TaskLauncherList contains a list of TaskLauncher
+type TaskLauncherList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []Task `json:"items"`
+	Items           []TaskLauncher `json:"items"`
 }
 
 func init() {
-	SchemeBuilder.Register(&Task{}, &TaskList{})
+	SchemeBuilder.Register(&TaskLauncher{}, &TaskLauncherList{})
 }

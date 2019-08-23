@@ -25,26 +25,26 @@ import (
 	taskv1alpha1 "github.com/projectriff/task/api/v1alpha1"
 )
 
-// TaskReconciler reconciles a Task object
-type TaskReconciler struct {
+// TaskLauncherReconciler reconciles a TaskLauncher object
+type TaskLauncherReconciler struct {
 	client.Client
 	Log logr.Logger
 }
 
-// +kubebuilder:rbac:groups=task.projectriff.io,resources=tasks,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=task.projectriff.io,resources=tasks/status,verbs=get;update;patch
+// +kubebuilder:rbac:groups=task.projectriff.io,resources=tasklaunchers,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=task.projectriff.io,resources=tasklaunchers/status,verbs=get;update;patch
 
-func (r *TaskReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
+func (r *TaskLauncherReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
 	_ = context.Background()
-	_ = r.Log.WithValues("task", req.NamespacedName)
+	_ = r.Log.WithValues("tasklauncher", req.NamespacedName)
 
 	// your logic here
 
 	return ctrl.Result{}, nil
 }
 
-func (r *TaskReconciler) SetupWithManager(mgr ctrl.Manager) error {
+func (r *TaskLauncherReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&taskv1alpha1.Task{}).
+		For(&taskv1alpha1.TaskLauncher{}).
 		Complete(r)
 }

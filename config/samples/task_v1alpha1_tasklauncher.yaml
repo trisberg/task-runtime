@@ -1,7 +1,7 @@
 apiVersion: task.projectriff.io/v1alpha1
-kind: Task
+kind: TaskLauncher
 metadata:
-  name: task-sample
+  name: tasklauncher-sample
 spec:
   # Add fields here
   foo: bar
