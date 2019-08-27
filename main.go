@@ -17,6 +17,7 @@ package main
 
 import (
 	"flag"
+	buildv1alpha1 "github.com/projectriff/system/pkg/apis/build/v1alpha1"
 	"os"
 
 	taskv1alpha1 "github.com/projectriff/task/api/v1alpha1"
@@ -38,6 +39,8 @@ func init() {
 	_ = clientgoscheme.AddToScheme(scheme)
 
 	_ = taskv1alpha1.AddToScheme(scheme)
+
+	_ = buildv1alpha1.AddToScheme(scheme)
 	// +kubebuilder:scaffold:scheme
 }
 

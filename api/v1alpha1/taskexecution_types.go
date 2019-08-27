@@ -24,8 +24,8 @@ import (
 
 // TaskExecutionSpec defines the desired state of TaskExecution
 type TaskExecutionSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// TaskLauncherRef is a reference to a TaskLauncher defining the launcher
+	TaskLauncherRef string `json:"taskLauncherRef,omitempty"`
 }
 
 // TaskExecutionStatus defines the observed state of TaskExecution
