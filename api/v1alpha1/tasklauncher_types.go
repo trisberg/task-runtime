@@ -24,14 +24,22 @@ import (
 
 // TaskLauncherSpec defines the desired state of TaskLauncher
 type TaskLauncherSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// Build resolves the image from a build resource.
+	Build *Build `json:"build,omitempty"`
 }
 
 // TaskLauncherStatus defines the observed state of TaskLauncher
 type TaskLauncherStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+}
+
+type Build struct {
+	// ApplicationRef references an application in this namespace.
+	ApplicationRef string `json:"applicationRef,omitempty"`
+
+	// ContainerRef references a container in this namespace.
+	ContainerRef string `json:"containerRef,omitempty"`
 }
 
 // +kubebuilder:object:root=true

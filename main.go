@@ -17,6 +17,7 @@ package main
 
 import (
 	"flag"
+	buildv1alpha1 "github.com/projectriff/system/pkg/apis/build/v1alpha1"
 	"os"
 
 	taskv1alpha1 "github.com/projectriff/task/api/v1alpha1"
@@ -35,9 +36,15 @@ var (
 )
 
 func init() {
+	//var SchemeGroupVersion = schema.GroupVersion{Group: "build.projectriff.io", Version: "v1alpha1"}
+	var SchemeGroupVersion = buildv1alpha1.SchemeGroupVersion
+	scheme.AddKnownTypeWithName(SchemeGroupVersion.WithKind("Container"), &buildv1alpha1.Container{})
+	scheme.AddKnownTypeWithName(SchemeGroupVersion.WithKind("ContainerList"), &buildv1alpha1.ContainerList{})
 	_ = clientgoscheme.AddToScheme(scheme)
 
 	_ = taskv1alpha1.AddToScheme(scheme)
+
+	_ = buildv1alpha1.AddToScheme(scheme)
 	// +kubebuilder:scaffold:scheme
 }
 
