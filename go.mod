@@ -1,4 +1,4 @@
-module github.com/projectriff/task
+module github.com/trisberg/task
 
 require (
 	github.com/go-logr/logr v0.1.0
